@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=SpaceBattle
+comment1.params=
+comment1.target=SpaceBattle()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=count
+comment4.target=void\ addAsteroids(int)
+comment5.params=number
+comment5.target=void\ createStars(int)
+comment6.params=looserName
+comment6.target=void\ gameOver(java.lang.String)
+comment7.params=
+comment7.target=void\ removeObjectsAfterTheGameIsOver()
+numComments=8

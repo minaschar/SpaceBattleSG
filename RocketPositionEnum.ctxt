@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RocketPositionEnum
+comment1.params=position
+comment1.target=RocketPositionEnum(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getPosition()
+numComments=3
