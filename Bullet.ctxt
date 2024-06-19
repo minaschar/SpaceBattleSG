@@ -2,8 +2,8 @@
 comment0.target=Bullet
 comment1.params=
 comment1.target=Bullet()
-comment2.params=speed\ rotation
-comment2.target=Bullet(Vector,\ int)
+comment2.params=speed\ rotation\ shooter
+comment2.target=Bullet(Vector,\ int,\ Rocket)
 comment3.params=
 comment3.target=void\ act()
 comment4.params=

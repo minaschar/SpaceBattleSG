@@ -4,15 +4,17 @@ public class Bullet extends SmoothMover
 {
     private static final int DAMAGE = 16;
     
+    private Rocket shooter;
     private int life = 60;
     
     public Bullet()
     {
     }
     
-    public Bullet(Vector speed, int rotation)
+    public Bullet(Vector speed, int rotation, Rocket shooter)
     {
         super(speed);
+        this.shooter = shooter;
         setRotation(rotation);
         addForce(new Vector(rotation, 15));
         Greenfoot.playSound("shot.mp3");
@@ -42,7 +44,7 @@ public class Bullet extends SmoothMover
         if (asteroid != null)
         {
             getWorld().removeObject(this);
-            asteroid.hit(DAMAGE);
+            asteroid.hit(DAMAGE, this.shooter);
         }
     }
     

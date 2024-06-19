@@ -120,12 +120,18 @@ public class Rocket extends SmoothMover
                 bulletDirection = 180; // Adjust for right-facing rocket
             }
             
-            Bullet bullet = new Bullet(getMovement().copy(), bulletDirection);
+            Bullet bullet = new Bullet(getMovement().copy(), bulletDirection, this);
             int fixedPosition = RocketPositionEnum.RIGHT.getPosition().equals(position) ? -40 : 40;
             getWorld().addObject(bullet, getX() + fixedPosition, getY());
             bullet.move();
             reloadDelayCount = 0;
         }
+    }
+    
+    public void increaseLifeByOne()
+    {
+        lifes++;
+        lifeCounter.setValue(lifes);  // Update counter display
     }
     
     public int getLifes()

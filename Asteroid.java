@@ -38,11 +38,14 @@ public class Asteroid extends SmoothMover
     /**
      * Hit this asteroid dealing the given amount of damage.
      */
-    public void hit(int damage) 
+    public void hit(int damage, Rocket shooter) 
     {
         stability = stability - damage;
         if(stability <= 0) 
-            breakUp ();         
+        {
+            breakUp ();    
+            shooter.increaseLifeByOne();
+        }
     }
     
     /**
