@@ -43,7 +43,7 @@ public class Asteroid extends SmoothMover
         stability = stability - damage;
         if(stability <= 0) 
         {
-            breakUp ();    
+            breakUp();    
             shooter.increaseLifeByOne();
         }
     }
