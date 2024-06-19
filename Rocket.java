@@ -8,7 +8,7 @@ public class Rocket extends SmoothMover
     private int fixedX;
     private Counter lifeCounter;
     private int reloadDelayCount;              
-    private int lifes; 
+    private double lifes; 
     
     private String keyMoveUp;
     private String keyMoveDown;
@@ -100,8 +100,9 @@ public class Rocket extends SmoothMover
         lifes--;
         lifeCounter.setValue(lifes);  // Update counter display
         
-        if (lifes <= 0) 
+        if (lifes < 1) 
         {
+            lifeCounter.setValue(0);  // Update counter display
             SpaceBattle space = (SpaceBattle) getWorld();
             space.addObject(new Explosion(), getX(), getY());
             space.removeObject(this);
@@ -130,11 +131,11 @@ public class Rocket extends SmoothMover
     
     public void increaseLifeByOne()
     {
-        lifes++;
+        lifes = lifes + 0.5;
         lifeCounter.setValue(lifes);  // Update counter display
     }
     
-    public int getLifes()
+    public double getLifes()
     {
         return lifes;
     }

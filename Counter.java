@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class Counter extends Actor 
 {
-    private int value = 0;
+    private double value = 0.0;
     private String text;
 
     public Counter(String prefix) 
@@ -17,13 +17,13 @@ public class Counter extends Actor
         setImage(image);
     }
 
-    public void setValue(int newValue) 
+    public void setValue(double newValue) 
     {
         value = newValue;
         updateImage();
     }
 
-    public int getValue() 
+    public double getValue() 
     {
         return value;
     }
