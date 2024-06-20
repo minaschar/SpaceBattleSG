@@ -2,10 +2,8 @@
 comment0.target=QuestionPopUp
 comment1.params=question
 comment1.target=QuestionPopUp(Question)
-comment2.params=title\ questionText\ options
-comment2.target=void\ makeImage(java.lang.String,\ java.lang.String,\ java.lang.String[])
-comment3.params=question\ options\ correctOption
-comment3.target=boolean\ showQuestionPopup(java.lang.String,\ java.lang.String[],\ int)
-comment4.params=
-comment4.target=boolean\ isCorrectAnswer()
-numComments=5
+comment2.params=question\ options\ correctOption
+comment2.target=boolean\ showQuestionPopup(java.lang.String,\ java.lang.String[],\ int)
+comment3.params=
+comment3.target=boolean\ isCorrectAnswer()
+numComments=4
