@@ -45,7 +45,7 @@ public class Asteroid extends SmoothMover
         {
             World worldObj = this.getWorld();
             breakUp();
-            QuestionPool questionPoolObj = new QuestionPool();
+            QuestionPool questionPoolObj = QuestionPool.getInstance();
             Question questionObj = questionPoolObj.getQuestion();
             QuestionPopUp popUp = new QuestionPopUp(questionObj);
             worldObj.addObject(popUp, worldObj.getWidth() / 2, worldObj.getHeight() / 2);

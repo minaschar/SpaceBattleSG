@@ -9,13 +9,15 @@ import org.w3c.dom.Element;
 
 public class QuestionPool 
 {
+    private static QuestionPool instance;
+    
     private ArrayList<Question> questionsLevel1;
     private ArrayList<Question> questionsLevel2;
     private ArrayList<Question> questionsLevel3;
     private ArrayList<Question> questionsLevel4;
     private ArrayList<Question> questionsLevel5;
 
-    public QuestionPool() 
+    private QuestionPool() 
     {
         this.questionsLevel1 = new ArrayList<>();
         this.questionsLevel2 = new ArrayList<>();
@@ -23,6 +25,15 @@ public class QuestionPool
         this.questionsLevel4 = new ArrayList<>();
         this.questionsLevel5 = new ArrayList<>();
         this.loadQuestionsFromXml();
+    }
+
+    public static synchronized QuestionPool getInstance() 
+    {
+        if (instance == null) 
+        {
+            instance = new QuestionPool();
+        }
+        return instance;
     }
 
     private void loadQuestionsFromXml() 
