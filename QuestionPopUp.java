@@ -22,13 +22,15 @@ public class QuestionPopUp extends Actor
         
         if (answerIndex == correctOption)
         {
+            Greenfoot.playSound("correct.mp3");
             return true;
         } else 
         {
+            Greenfoot.playSound("wrong.mp3");
             String feedback = options[correctOption];
             PlayerFeedbackPopup popup = new PlayerFeedbackPopup(feedback);
             this.world.addObject(popup, this.world.getWidth() / 2, this.world.getHeight() / 2);
-            Greenfoot.delay(50); 
+            Greenfoot.delay(70); 
             this.world.removeObject(popup);
             
             return false;
