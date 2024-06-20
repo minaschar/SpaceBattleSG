@@ -43,8 +43,20 @@ public class Asteroid extends SmoothMover
         stability = stability - damage;
         if(stability <= 0) 
         {
-            breakUp();    
-            shooter.increaseLifeByOne();
+            World worldObj = this.getWorld();
+            breakUp();
+            String question = "What is the capital of France?";
+            String[] options = {"a) Berlin", "b) Madrid", "c) Paris", "d) Rome"};
+            int correctOption = 2; // Index of the correct answer
+            QuestionPopUp popUp = new QuestionPopUp(question, options, correctOption);
+            worldObj.addObject(popUp, worldObj.getWidth() / 2, worldObj.getHeight() / 2);
+            
+            if (popUp.isCorrectAnswer()) 
+            {
+                shooter.increaseLifeByOne();
+            }
+            
+            worldObj.removeObject(popUp);
         }
     }
     
