@@ -5,11 +5,13 @@ public enum RocketPositionEnum
     
     private final String position;
 
-    private RocketPositionEnum(String position) {
+    private RocketPositionEnum(String position) 
+    {
         this.position = position;
     }
 
-    public String getPosition() {
+    public String getPosition() 
+    {
         return position;
     }
 }

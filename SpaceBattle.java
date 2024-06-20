@@ -16,6 +16,9 @@ public class SpaceBattle extends World
     
     private int actCount = 0;  
     private boolean gameOver = false;
+    
+    private int level = 0;
+    private int currQuestion = 0;
 
     public SpaceBattle() 
     {
@@ -57,7 +60,8 @@ public class SpaceBattle extends World
     {
         actCount++;  // Increment the act counter every cycle
 
-        if (actCount >= 400 && !gameOver) {
+        if (actCount >= 400 && !gameOver) 
+        {
             addAsteroids(1);  // Add an asteroid 
             actCount = 0;     // Reset the act counter
         }
@@ -129,5 +133,24 @@ public class SpaceBattle extends World
     
         removeObjects(allObjects);
     }
-
+    
+    public void increaseLevel()
+    {
+        this.level++;
+    }
+    
+    public void increaseQuestionCounter()
+    {
+        this.currQuestion++;
+    }
+    
+    public int getLevel()
+    {
+        return this.level;
+    }
+    
+    public int getCurrQuestion()
+    {
+        return this.currQuestion;
+    }
 }

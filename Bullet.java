@@ -20,7 +20,8 @@ public class Bullet extends SmoothMover
         Greenfoot.playSound("shot.mp3");
     }
     
-    public void act() {
+    public void act() 
+    {
         if (life <= 0 || atWorldEdge()) 
         {
             getWorld().removeObject(this);
