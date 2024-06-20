@@ -22,7 +22,8 @@ public class StartScreen extends World
         showText("It's a 2 players game, 1 vs 1. Each Player has 3 lifes. Be careful of the asteroids!", 500, 300);
         showText("Player on the LEFT (R1): 1 (up) | 2 (down) | 3 (fire)", 500, 350);
         showText("Player on the RIGHT (R2): 'up' arrow (up) | 'down' arrow (down) | 'left' arrow (fire)", 500, 400);
-        showText("Press \"SPACE\" to start", 500, 500);   
+        showText("DESTROY ASTEROIDS TO ANSWER QUESTION AND INCREASE YOU LIFE!!!", 500, 450);
+        showText("Press \"SPACE\" to start", 500, 550);   
     }
 
     public void act() 
