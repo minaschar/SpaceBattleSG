@@ -17,7 +17,7 @@ public class SpaceBattle extends World
     private int actCount = 0;  
     private boolean gameOver = false;
     
-    private int level = 0;
+    private int level = 1;
     private int currQuestion = 0;
 
     public SpaceBattle() 
@@ -142,6 +142,11 @@ public class SpaceBattle extends World
     public void increaseQuestionCounter()
     {
         this.currQuestion++;
+    }
+    
+    public void initCurrQuestion()
+    {
+        this.currQuestion = 0;
     }
     
     public int getLevel()

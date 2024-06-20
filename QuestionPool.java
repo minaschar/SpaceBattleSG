@@ -101,8 +101,28 @@ public class QuestionPool
         }
     }
 
-    public Question getQuestion() 
+    public Question getQuestionForLevel1(int index) 
     {
-        return questionsLevel5.get(9);
+        return questionsLevel1.get(index);
+    }
+    
+    public Question getQuestionForLevel2(int index) 
+    {
+        return questionsLevel2.get(index);
+    }
+    
+    public Question getQuestionForLevel3(int index) 
+    {
+        return questionsLevel3.get(index);
+    }
+    
+    public Question getQuestionForLevel4(int index) 
+    {
+        return questionsLevel4.get(index);
+    }
+    
+    public Question getQuestionForLevel5(int index) 
+    {
+        return questionsLevel5.get(index);
     }
 }

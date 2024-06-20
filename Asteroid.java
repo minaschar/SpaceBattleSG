@@ -45,17 +45,19 @@ public class Asteroid extends SmoothMover
         {
             World worldObj = this.getWorld();
             breakUp();
-            QuestionPool questionPoolObj = QuestionPool.getInstance();
-            Question questionObj = questionPoolObj.getQuestion();
-            QuestionPopUp popUp = new QuestionPopUp(questionObj);
-            worldObj.addObject(popUp, worldObj.getWidth() / 2, worldObj.getHeight() / 2);
-            
-            if (popUp.isCorrectAnswer()) 
+            if ((((SpaceBattle) worldObj).getLevel() <= 5 && ((SpaceBattle) worldObj).getCurrQuestion() <= 9))
             {
-                shooter.increaseLifeByOne();
+                Question questionObj = this.selectQuestion(worldObj);
+                QuestionPopUp popUp = new QuestionPopUp(questionObj);
+                worldObj.addObject(popUp, worldObj.getWidth() / 2, worldObj.getHeight() / 2);
+                
+                if (popUp.isCorrectAnswer()) 
+                {
+                    shooter.increaseLifeByOne();
+                }
+                
+                worldObj.removeObject(popUp);
             }
-            
-            worldObj.removeObject(popUp);
         }
     }
     
@@ -97,6 +99,43 @@ public class Asteroid extends SmoothMover
         this.size = size;
         GreenfootImage image = getImage();
         image.scale(size, size);
+    }
+    
+    private Question selectQuestion(World worldObj)
+    {
+        QuestionPool questionPoolObj = QuestionPool.getInstance();
+        SpaceBattle spaceBattleObj = ((SpaceBattle) worldObj);
+        int currLevel = spaceBattleObj.getLevel();
+        int currQuestion = spaceBattleObj.getCurrQuestion();
+        Question question = null;
+        
+        if (currLevel == 1)
+        {
+            question = questionPoolObj.getQuestionForLevel1(currQuestion);
+        } else if (currLevel == 2)
+        {
+            question = questionPoolObj.getQuestionForLevel2(currQuestion);
+        } else if (currLevel == 3)
+        {
+            question = questionPoolObj.getQuestionForLevel3(currQuestion);
+        } else if (currLevel == 4)
+        {
+            question = questionPoolObj.getQuestionForLevel4(currQuestion);
+        } else if (currLevel == 5)
+        {
+            question = questionPoolObj.getQuestionForLevel5(currQuestion);
+        }
+        
+        if (currQuestion == 9)
+        {
+            spaceBattleObj.initCurrQuestion();
+            spaceBattleObj.increaseLevel();
+        } else 
+        {
+            spaceBattleObj.increaseQuestionCounter();
+        }
+        
+        return question;
     }
     
     /**
