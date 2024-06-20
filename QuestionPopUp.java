@@ -7,9 +7,9 @@ public class QuestionPopUp extends Actor {
     
     private boolean correctAnswer;
     
-    public QuestionPopUp(String question, String[] options, int correctOption) {
-        makeImage("Question", question, options);
-        this.correctAnswer = showQuestionPopup(question, options, correctOption);
+    public QuestionPopUp(Question question) {
+        makeImage("Question", question.getQuestion(), question.getOptions());
+        this.correctAnswer = showQuestionPopup(question.getQuestion(), question.getOptions(), question.getCorrectOption());
     }
     
     private void makeImage(String title, String questionText, String[] options) {

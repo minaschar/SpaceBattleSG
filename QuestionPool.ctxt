@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=QuestionPool
+comment1.params=
+comment1.target=QuestionPool()
+comment2.params=
+comment2.target=void\ addQuestions()
+comment3.params=
+comment3.target=Question\ getQuestion()
+numComments=4

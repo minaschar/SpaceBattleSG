@@ -45,10 +45,9 @@ public class Asteroid extends SmoothMover
         {
             World worldObj = this.getWorld();
             breakUp();
-            String question = "What is the capital of France?";
-            String[] options = {"a) Berlin", "b) Madrid", "c) Paris", "d) Rome"};
-            int correctOption = 2; // Index of the correct answer
-            QuestionPopUp popUp = new QuestionPopUp(question, options, correctOption);
+            QuestionPool questionPoolObj = new QuestionPool();
+            Question questionObj = questionPoolObj.getQuestion();
+            QuestionPopUp popUp = new QuestionPopUp(questionObj);
             worldObj.addObject(popUp, worldObj.getWidth() / 2, worldObj.getHeight() / 2);
             
             if (popUp.isCorrectAnswer()) 
