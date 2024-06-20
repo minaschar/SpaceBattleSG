@@ -48,7 +48,7 @@ public class Asteroid extends SmoothMover
             if ((((SpaceBattle) worldObj).getLevel() <= 5 && ((SpaceBattle) worldObj).getCurrQuestion() <= 9))
             {
                 Question questionObj = this.selectQuestion(worldObj);
-                QuestionPopUp popUp = new QuestionPopUp(questionObj);
+                QuestionPopUp popUp = new QuestionPopUp(questionObj, worldObj);
                 worldObj.addObject(popUp, worldObj.getWidth() / 2, worldObj.getHeight() / 2);
                 
                 if (popUp.isCorrectAnswer()) 

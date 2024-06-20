@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=QuestionPopUp
-comment1.params=question
-comment1.target=QuestionPopUp(Question)
+comment1.params=question\ world
+comment1.target=QuestionPopUp(Question,\ greenfoot.World)
 comment2.params=question\ options\ correctOption
 comment2.target=boolean\ showQuestionPopup(java.lang.String,\ java.lang.String[],\ int)
 comment3.params=

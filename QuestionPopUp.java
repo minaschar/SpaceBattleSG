@@ -7,9 +7,11 @@ public class QuestionPopUp extends Actor
     public static final int HEIGHT = 300;
     
     private boolean correctAnswer;
+    private World world;
     
-    public QuestionPopUp(Question question) 
+    public QuestionPopUp(Question question, World world) 
     {
+        this.world = world;
         this.correctAnswer = showQuestionPopup(question.getQuestion(), question.getOptions(), question.getCorrectOption());
     }
     
@@ -18,7 +20,19 @@ public class QuestionPopUp extends Actor
         String answer = Greenfoot.ask(question + "\n" + String.join("\n", options) + "\nEnter your answer (a, b, c, d):");
         int answerIndex = answer.charAt(0) - 'a';
         
-        return answerIndex == correctOption;
+        if (answerIndex == correctOption)
+        {
+            return true;
+        } else 
+        {
+            String feedback = options[correctOption];
+            PlayerFeedbackPopup popup = new PlayerFeedbackPopup(feedback);
+            this.world.addObject(popup, this.world.getWidth() / 2, this.world.getHeight() / 2);
+            Greenfoot.delay(50); 
+            this.world.removeObject(popup);
+            
+            return false;
+        }
     }
     
     public boolean isCorrectAnswer() 
